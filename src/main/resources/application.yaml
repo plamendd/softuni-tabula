@@ -2,7 +2,7 @@ spring:
   datasource:
     url: "jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/tabula?serverTimezone=UTC&characterEncoding=UTF-8&sslMode=DISABLED&createDatabaseIfNotExist=true"
     username: "${DB_USER:root}"
-    password: "${DB_PASSWORD:}"
+    password: "${DB_PASSWORD:root}"
     continueOnError: true
     driver-class-name: "com.mysql.cj.jdbc.Driver"
     hikari:
