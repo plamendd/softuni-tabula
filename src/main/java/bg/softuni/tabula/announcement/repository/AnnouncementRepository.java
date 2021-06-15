@@ -7,6 +7,6 @@ import java.time.Instant;
 
 public interface AnnouncementRepository  extends JpaRepository<AnnouncementEntity, Long> {
 
-    void deleteByUpdateOnBefore(Instant before);
+    void deleteByUpdatedOnBefore(Instant before);
 
 }

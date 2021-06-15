@@ -27,6 +27,6 @@ public class AnnouncementService {
 
     public void cleanUpOldAnnpouncements(){
         Instant endTime  = Instant.now().minus(7, ChronoUnit.DAYS);
-        announcementRepository.deleteByUpdateOnBefore(endTime);
+        announcementRepository.deleteByUpdatedOnBefore(endTime);
     }
 }
