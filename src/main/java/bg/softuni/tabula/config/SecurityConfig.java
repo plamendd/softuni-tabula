@@ -29,14 +29,14 @@ public class  SecurityConfig extends WebSecurityConfigurerAdapter {
         http.
                 authorizeRequests().
                 requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll().
-                antMatchers("/login**").permitAll().
+                antMatchers("/login**", "/login-error**", "/registration").permitAll().
                 antMatchers(("/**")).
                 authenticated().
                 and().
                 formLogin().
                 loginPage("/login").
                 loginProcessingUrl("/login/authenticate").
-                failureForwardUrl("/login?param.error=bad_credentials").
+                failureForwardUrl("/login-error").
                 successForwardUrl("/home").
                 and().
                 logout().
@@ -47,7 +47,7 @@ public class  SecurityConfig extends WebSecurityConfigurerAdapter {
                 and().
                 oauth2Login().
                 loginPage("/login").
-                successHandler(oAuth2UserAuthSuccessHandler); //TODO
+                successHandler(oAuth2UserAuthSuccessHandler);
 
     }
 
